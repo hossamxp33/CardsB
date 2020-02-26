@@ -85,7 +85,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginLeft="32dp"
                 android:layout_marginTop="8dp"
-                android:onClick="@{() -> listener.PrintReportFromPortifolio(Context,data)}"
+                android:onClick="@{() -> listener.PrintReportFromPortifoliio(Context,data)}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

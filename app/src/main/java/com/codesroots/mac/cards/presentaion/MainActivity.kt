@@ -190,7 +190,7 @@ class ClickHandler {
 
 
                     if (it.err != null) {
-                        it.err.snack((context as MainActivity).window.decorView.rootView)
+                        it.err!!.snack((context as MainActivity).window.decorView.rootView)
                         dialogView.err.text = it.err
                         dialogView.err.isGone = false
                     } else {
@@ -252,7 +252,7 @@ class ClickHandler {
 
 
                     if (it.err != null) {
-                        it.err.snack((context as MainActivity).window.decorView.rootView)
+                        it.err!!.snack((context as MainActivity).window.decorView.rootView)
                         dialogView.err.text = it.err
                         dialogView.err.isGone = false
                     } else {
@@ -343,7 +343,7 @@ class ClickHandler {
 
             viewModel.BuyPackageResponseLD?.observe(context, Observer {
                 if (it.err != null) {
-                    it.err.snack((context as MainActivity).window.decorView.rootView)
+                    it.err!!.snack((context as MainActivity).window.decorView.rootView)
 
 
                 } else {
@@ -389,7 +389,7 @@ class ClickHandler {
 
             viewModel.BuyPackageResponseLD?.observe(context, Observer {
                 if (it.err != null) {
-                    it.err.snack((context as MainActivity).window.decorView.rootView)
+                    it.err!!.snack((context as MainActivity).window.decorView.rootView)
 
 
                 } else {
