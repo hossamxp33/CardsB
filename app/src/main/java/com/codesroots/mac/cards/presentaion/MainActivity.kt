@@ -238,6 +238,51 @@ class ClickHandler {
                 })
             }
         }
+        dialogView.saveToRoom.setOnClickListener { v: View? ->
+            if (SystemClock.elapsedRealtime() - mLastClickTime < 1000){
+                return@setOnClickListener
+            }
+            v!!.isGone = true
+            mLastClickTime = SystemClock.elapsedRealtime();
+            val auth = PreferenceHelper.getToken()
+            viewmodel.BuyPackage(id,auth!!,dialogView.from.text.toString())
+
+            if (viewmodel.BuyPackageResponseLD?.hasObservers() == false) {
+                viewmodel.BuyPackageResponseLD?.observe(context, Observer {
+
+
+                    if (it.err != null) {
+                        it.err!!.snack((context as MainActivity).window.decorView.rootView)
+                        dialogView.err.text = it.err
+                        dialogView.err.isGone = false
+                    } else {
+                        if (!it!!.pencode.isNullOrEmpty()) {
+                            Thread {
+                                val db = Room.databaseBuilder(
+                                    context,
+                                    CardDatabase::class.java, "card-database"
+                                ).build()
+                                insertUserWithPet(it, db.getCardDao())
+                                "تم الحفظ بالمحفظة بنجاح".snack((context).window.decorView.rootView)
+                            }.start()
+
+                            GlobalScope.launch {
+                                val db = Room.databaseBuilder(
+                                    context,
+                                    CardDatabase::class.java, "card-database"
+                                ).build()
+                                db.getCardDao().GetAllData()
+                                "تم الحفظ بالمحفظة بنجاح".snack((context).window.decorView.rootView)
+                            }
+
+
+                        }
+
+                    }
+
+                })
+            }
+        }
     }
     fun insertUserWithPet(user: Buypackge, cardDao: CardDao) {
         val pets = user.pencode!!
