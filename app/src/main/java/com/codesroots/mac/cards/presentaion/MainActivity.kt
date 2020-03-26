@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
             R.drawable.work, R.color.signinpurple
         )
         with(bottom_navigation) {
-            addItems(listOf(item2, item1,item3))
+            addItems(listOf(item2, item1,item3,item4))
             inactiveColor = ContextCompat.getColor(context ,R.color.gray )
             accentColor  =  ContextCompat.getColor(context ,R.color.signinpurple )
 
