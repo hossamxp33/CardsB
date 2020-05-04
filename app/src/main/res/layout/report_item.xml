@@ -21,6 +21,7 @@
             android:onClick="@{() -> listener.ShowReport(Context,data.opno)}"
             android:layout_width="match_parent"
             android:layout_marginTop="10dp"
+            android:layoutAnimation="@anim/layout_animation"
             android:background="@color/white"
             android:layout_height="wrap_content">
 

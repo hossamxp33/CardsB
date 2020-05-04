@@ -41,7 +41,6 @@ class mainFragment  : Fragment(){
 
         var view:MainFragmentBinding =
             DataBindingUtil.inflate(inflater,R.layout.main_fragment, container,false)
-        val typeface = Typeface.createFromAsset(getContext()!!.assets, "fonts/DroidKufi_Regular.ttf")
         pager = view.pager
         viewModel =   ViewModelProviders.of(this).get(MainViewModel::class.java)
         viewModel.getcompanyData()
@@ -51,11 +50,6 @@ class mainFragment  : Fragment(){
             MainAdapter = MainAdapter( viewModel,context,it)
             view.recyler.layoutManager = GridLayoutManager(context,2)
             view.recyler.adapter = MainAdapter;
-            view.textView11.typeface = typeface
-            view.textView5.typeface = typeface
-            view.lastvalue.typeface = typeface
-
-            view.value.typeface = typeface
 
         })
         viewModel.MyBalanceResponseLD?.observe(this , Observer {

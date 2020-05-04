@@ -96,19 +96,19 @@ class MainActivity : AppCompatActivity() {
                 Log.e( "tab positiion",position.toString())
                 /*  getLastLocation()*/
                 if (position==3) {
-                    supportFragmentManager!!.beginTransaction()
+                    supportFragmentManager!!.beginTransaction().setCustomAnimations(R.anim.ttb, 0, 0,0)
                         .replace(com.codesroots.mac.cards.R.id.main_frame, PortiflioFragment()).addToBackStack(null).commit()
                 }
                 if (position==2) {
-                    supportFragmentManager!!.beginTransaction()
+                    supportFragmentManager!!.beginTransaction().setCustomAnimations(R.anim.ttb, 0, 0,0)
                         .replace(com.codesroots.mac.cards.R.id.main_frame, MenuFragment()).addToBackStack(null).commit()
                 }
                 if (position==1) {
-                    supportFragmentManager!!.beginTransaction()
+                    supportFragmentManager!!.beginTransaction().setCustomAnimations(R.anim.ttb, 0, 0,0)
                         .replace(R.id.main_frame, mainFragment()).addToBackStack(null).commit()
                 }
                 if (position == 0){
-                    supportFragmentManager!!.beginTransaction()
+                    supportFragmentManager!!.beginTransaction().setCustomAnimations(R.anim.ttb, 0, 0,0)
                         .replace(R.id.main_frame, ReportsFragment()).addToBackStack(null).commit()
 
 
@@ -131,6 +131,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
+
+
 class ClickHandler {
     var  mLastClickTime: Long = 0
 
@@ -143,7 +146,7 @@ class ClickHandler {
         val frag = CompanyDetails()
         frag.arguments =bundle
         bundle.putString("packageId" , comid)
-        ( context as MainActivity).supportFragmentManager!!.beginTransaction()
+        ( context as MainActivity).supportFragmentManager!!.beginTransaction().setCustomAnimations(R.anim.ttb, 0, 0,0)
             .replace(R.id.main_frame, frag).addToBackStack(null).commit()
     }
     fun SwitchToReports( context: Context,comid :String) {
@@ -153,7 +156,7 @@ class ClickHandler {
         val frag = ReportsFragment()
         frag.arguments =bundle
         bundle.putString("packageId" , comid)
-        ( context as MainActivity).supportFragmentManager!!.beginTransaction()
+        ( context as MainActivity).supportFragmentManager!!.beginTransaction().setCustomAnimations(R.anim.ttb, 0, 0,0)
             .replace(com.codesroots.mac.cards.R.id.main_frame, frag).addToBackStack(null).commit()
     }
 
