@@ -377,7 +377,7 @@ public class IPosPrinterTestDemo {
 
                         try {
 
-                            if (!value.getPencode().isEmpty()) {
+                            if (!value.getPencode().get(0).getSerial().isEmpty()) {
                                 for (Integer i = 0; i < value.getPencode().size(); i++) {
 
 

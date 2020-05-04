@@ -373,7 +373,7 @@ class ClickHandler {
 
 
                 } else {
-                    if (!it!!.pencode.isNullOrEmpty()) {
+                    if (!it!!.pencode?.get(0)?.serial.isNullOrEmpty()) {
 
 
                         Glide.with(context as MainActivity)
