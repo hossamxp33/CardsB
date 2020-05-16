@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
-        xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/layout"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/layout"
         >
 
     <data>
@@ -13,11 +15,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".SignInActivity">
+
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layoutAnimation="@anim/layout_animation"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
 
-                android:layout_height="match_parent" android:background="#E6EAED">
+                android:layoutAnimation="@anim/layout_animation">
 
             <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/appCompatImageView"
@@ -91,9 +95,13 @@
 
             <TextView
                     android:id="@+id/infotitle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
                     android:text="تعليمات"
                     android:textColor="#000"
                     android:textSize="25sp"
@@ -133,8 +141,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#E6EAED"
-                        >
+                        android:background="#E6EAED">
 
                     <androidx.constraintlayout.widget.Guideline
                             android:id="@+id/guidelineinsidecard"
@@ -148,10 +155,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="8dp"
-                            android:text="السيريال :"
+                            android:text="السيريال :  "
                             android:textColor="#000000"
 
-                            android:textSize="22sp"
+                            android:textSize="24sp"
                             android:textStyle="bold"
                             app:fontFamily="@font/fonts"
                             app:layout_constraintRight_toRightOf="parent"
@@ -165,7 +172,6 @@
                             android:textSize="18sp"
                             android:textStyle="bold"
                             app:fontFamily="@font/fonts"
-                            app:layout_constraintBottom_toBottomOf="@id/textView6"
                             app:layout_constraintRight_toLeftOf="@+id/textView6"
                             app:layout_constraintTop_toTopOf="@+id/textView6" />
 
@@ -175,9 +181,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
                             android:layout_marginRight="8dp"
-                            android:text=" الصلاحية :"
+                            android:text=" الصلاحية :  "
                             android:textColor="#000000"
-                            android:textSize="22sp"
+                            android:textSize="24sp"
                             android:textStyle="bold"
                             app:fontFamily="@font/fonts"
                             app:layout_constraintRight_toRightOf="parent"
@@ -231,7 +237,7 @@
                             android:layout_marginTop="8dp"
                             android:text="اسم المكتب"
                             android:textColor="#000000"
-                            android:textSize="22sp"
+                            android:textSize="24sp"
                             android:textStyle="bold"
                             app:fontFamily="@font/fonts"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -253,11 +259,13 @@
                             app:layout_constraintTop_toBottomOf="@+id/officename" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
+
             <androidx.constraintlayout.widget.Guideline
-                    android:orientation="horizontal"
+                    android:id="@+id/guideline2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" app:layout_constraintGuide_percent="0.8"
-                    android:id="@+id/guideline2"/>
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.8" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
